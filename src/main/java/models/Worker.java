@@ -18,6 +18,10 @@ public class Worker {
     private String surname;
     private float salary;
 
+   @ManyToOne
+    private Department department;
+
+
     public int getWorkerId() {
         return workerId;
     }
@@ -48,5 +52,13 @@ public class Worker {
 
     public void setSalary(float salary) {
         this.salary = salary;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
