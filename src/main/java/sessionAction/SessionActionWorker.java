@@ -1,36 +1,10 @@
 package sessionAction;
 
-import models.Department;
 import models.Worker;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-public class SessionActionWorker {
-
-    protected SessionFactory sessionFactory;
-
-    public void setup(){
-        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-                .configure()
-                .build();
-        try {
-            sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            StandardServiceRegistryBuilder.destroy( registry );
-        }
-    }
-
-    public void exit(){
-        sessionFactory.close();
-    }
-
+public class SessionActionWorker extends SessionAction {
 
     public void create(Worker worker){
-
 
         org.hibernate.Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -42,20 +16,6 @@ public class SessionActionWorker {
 
     }
 
-
-
-/*    public void update(Worker worker){
-
-
-        org.hibernate.Session session = sessionFactory.openSession();
-        session.beginTransaction();
-
-        session.update(worker);
-
-        session.getTransaction().commit();
-        session.close();
-
-    }*/
 
     public void read(int workerId)
     {
@@ -75,6 +35,22 @@ public class SessionActionWorker {
 
 
         session.close();
+    }
+
+    public Worker getWorker(int workerId){
+        org.hibernate.Session session = sessionFactory.openSession();
+
+        Worker worker = session.get(Worker.class,workerId);
+
+        session.close();
+
+        if(worker != null){
+            return worker;
+        }
+        else{
+            return null;
+        }
+
     }
 
     public void delete(int id){

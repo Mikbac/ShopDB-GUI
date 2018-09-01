@@ -18,9 +18,17 @@ public class Worker {
     private String surname;
     private float salary;
 
-   @ManyToOne
+    @ManyToOne
     private Department department;
 
+   public Worker(){}
+
+    public Worker(String name, String surname, float salary, Department department) {
+        this.name = name;
+        this.surname = surname;
+        this.salary = salary;
+        this.department = department;
+    }
 
     public int getWorkerId() {
         return workerId;

@@ -17,6 +17,7 @@
 
     <mapping class="models.Worker" />
     <mapping class="models.Department" />
+    <mapping class="models.Product"/>
 
 </session-factory>
 </hibernate-configuration>

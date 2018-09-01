@@ -1,7 +1,9 @@
 import models.Department;
+import models.Product;
 import models.Worker;
 import org.junit.Test;
 import sessionAction.SessionActionDepartment;
+import sessionAction.SessionActionProduct;
 import sessionAction.SessionActionWorker;
 
 public class MyTests {
@@ -17,26 +19,25 @@ public class MyTests {
         SessionActionDepartment sessionActionDepartment = new SessionActionDepartment();
         sessionActionDepartment.setup();
         sessionActionDepartment.exit();
+
+        SessionActionProduct sessionActionProduct = new SessionActionProduct();
+        sessionActionProduct.setup();
+        sessionActionProduct.exit();
     }
 
 
     @Test
     public void workerTest(){
+        SessionActionWorker sessionActionWorker = new SessionActionWorker();
+        sessionActionWorker.setup();
 
-        SessionActionWorker session = new SessionActionWorker();
-        session.setup();
+        Worker worker = new Worker("Wojtek", "Nowak", 1234.67f, null);
 
-        Worker worker = new Worker();
-        worker.setWorkerId(1);
-        worker.setName("Wojtek");
-        worker.setSurname("Nowak");
-        worker.setSalary(1999.99f);
-
-        session.create(worker);
-        session.read(worker.getWorkerId());
-      session.delete(worker.getWorkerId());
-
-        session.exit();
+        sessionActionWorker.create(worker);
+        sessionActionWorker.read(worker.getWorkerId());
+        sessionActionWorker.getWorker(worker.getWorkerId());
+        sessionActionWorker.delete(worker.getWorkerId());
+        sessionActionWorker.exit();
     }
 
 
@@ -45,37 +46,37 @@ public class MyTests {
         SessionActionDepartment session = new SessionActionDepartment();
         session.setup();
 
-
-        Department department = new Department();
-        department.setName("Vegetables");
+        Department department = new Department("Vegetables");
 
         session.create(department);
         session.read(department.getDepartmentId());
-      session.delete(department.getDepartmentId());
-
+        session.getDepartment(department.getDepartmentId());
+        session.delete(department.getDepartmentId());
         session.exit();
     }
 
     @Test
-    public void manyToOneRelationTest(){
+    public void productTest(){
+        SessionActionProduct sessionActionProduct = new SessionActionProduct();
+        sessionActionProduct.setup();
+
+        Product product = new Product("Onion", 12, 5.99f, null);
+
+        sessionActionProduct.create(product);
+        sessionActionProduct.read(product.getProductId());
+        sessionActionProduct.getProduct(product.getProductId());
+        sessionActionProduct.delete(product.getProductId());
+        sessionActionProduct.exit();
+    }
+
+    @Test
+    public void manyToOneRelationDepartmentAndWorkerTest(){
         SessionActionDepartment sessionActionDepartment = new SessionActionDepartment();
         SessionActionWorker sessionActionWorker = new SessionActionWorker();
 
-        Department department = new Department();
-        Worker worker1 = new Worker();
-        Worker worker2 = new Worker();
-
-        department.setName("Vegetables");
-
-        worker1.setName("Michal");
-        worker1.setSurname("Kowalski");
-        worker1.setSalary(1991.89f);
-        worker1.setDepartment(department);
-
-        worker2.setName("Rafal");
-        worker2.setSurname("Nowak");
-        worker2.setSalary(2999.77f);
-        worker2.setDepartment(department);
+        Department department = new Department("Vegetables");
+        Worker worker1 = new Worker("Michał","Kowalski",1934.23f,department);
+        Worker worker2 = new Worker("Rafal", "Okon", 2999.76f, department);
 
         sessionActionDepartment.setup();
         sessionActionWorker.setup();
@@ -89,6 +90,26 @@ public class MyTests {
 
     }
 
+    @Test
+    public void manyToOneRelationDepartmentAndProductTest(){
+        SessionActionDepartment sessionActionDepartment = new SessionActionDepartment();
+        SessionActionProduct sessionActionProduct = new SessionActionProduct();
+
+        Department department = new Department("Vegetables");
+        Product product1 = new Product("Tomato", 44, 1.99f, department);
+        Product product2 = new Product("Carrot", 55, 2.19f, department);
+
+        sessionActionDepartment.setup();
+        sessionActionProduct.setup();
+
+        sessionActionDepartment.create(department);
+        sessionActionProduct.create(product1);
+        sessionActionProduct.create(product2);
+
+        sessionActionDepartment.exit();
+        sessionActionProduct.exit();
+
+    }
 
 
 
