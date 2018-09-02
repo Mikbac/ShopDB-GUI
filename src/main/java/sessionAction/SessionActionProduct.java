@@ -30,6 +30,7 @@ public class SessionActionProduct extends SessionAction {
             System.out.println("Amount: " + product.getAmount());
             System.out.println("Price: " + product.getPrice());
             System.out.println("Department: " + product.getDepartment());
+            System.out.println("Supplier: " + product.getSupplier());
         }
         else{
             System.out.println("Product could not be found!");

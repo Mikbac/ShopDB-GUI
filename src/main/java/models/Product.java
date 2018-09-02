@@ -20,15 +20,19 @@ public class Product {
     @ManyToOne
     private Department department;
 
+    @ManyToOne
+    private Supplier supplier;
+
     public Product(){
 
     }
 
-    public Product(String name, int amount, float price, Department department) {
+    public Product(String name, int amount, float price, Department department, Supplier supplier) {
         this.name = name;
         this.amount = amount;
         this.price = price;
         this.department = department;
+        this.supplier = supplier;
     }
 
     public int getProductId() {
@@ -69,5 +73,13 @@ public class Product {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
 }
