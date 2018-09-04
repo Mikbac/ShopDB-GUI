@@ -25,6 +25,7 @@ public class SessionActionDepartment extends SessionAction {
         Department department= session.get(Department.class,departmentId);
 
         if(department != null){
+            System.out.println("Name: " + department.getDepartmentId());
             System.out.println("Name: " + department.getName());
         }
         else{

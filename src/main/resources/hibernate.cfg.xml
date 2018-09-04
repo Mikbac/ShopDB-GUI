@@ -19,6 +19,8 @@
     <mapping class="models.Department" />
     <mapping class="models.Product"/>
     <mapping class="models.Supplier"/>
+    <mapping class="models.Room"/>
+    <mapping class="models.AccessCard"/>
 
 </session-factory>
 </hibernate-configuration>

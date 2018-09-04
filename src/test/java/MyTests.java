@@ -1,12 +1,6 @@
-import models.Department;
-import models.Product;
-import models.Supplier;
-import models.Worker;
+import models.*;
 import org.junit.Test;
-import sessionAction.SessionActionDepartment;
-import sessionAction.SessionActionProduct;
-import sessionAction.SessionActionSupplier;
-import sessionAction.SessionActionWorker;
+import sessionAction.*;
 
 public class MyTests {
 
@@ -29,6 +23,14 @@ public class MyTests {
         SessionActionSupplier sessionActionSupplier = new SessionActionSupplier();
         sessionActionSupplier.setup();
         sessionActionSupplier.exit();
+
+        SessionActionAccesCard sessionActionAccesCard = new SessionActionAccesCard();
+        sessionActionAccesCard.setup();
+        sessionActionAccesCard.exit();
+
+        SessionActionRoom sessionActionRoom = new SessionActionRoom();
+        sessionActionRoom.setup();
+        sessionActionRoom.exit();
     }
 
 
@@ -86,6 +88,32 @@ public class MyTests {
         sessionActionSupplier.getSupplier(supplier.getSupplierId());
         sessionActionSupplier.delete(supplier.getSupplierId());
         sessionActionSupplier.exit();
+    }
+
+    @Test
+    public void roomTest(){
+        SessionActionRoom sessionActionRoom = new SessionActionRoom();
+        sessionActionRoom.setup();
+
+        Room room = new Room("warehouse");
+        sessionActionRoom.create(room);
+        sessionActionRoom.read(room.getRoomId());
+        sessionActionRoom.getRoom(room.getRoomId());
+        sessionActionRoom.delete(room.getRoomId());
+        sessionActionRoom.exit();
+    }
+
+    @Test
+    public void accessCardTest(){
+        SessionActionAccesCard sessionActionAccesCard = new SessionActionAccesCard();
+        sessionActionAccesCard.setup();
+
+        AccessCard accessCard = new AccessCard(true, null, null);
+        sessionActionAccesCard.create(accessCard);
+        sessionActionAccesCard.read(accessCard.getAccessCardId());
+        sessionActionAccesCard.getAccessCard(accessCard.getAccessCardId());
+        sessionActionAccesCard.delete(accessCard.getAccessCardId());
+        sessionActionAccesCard.exit();
     }
 
     @Test
@@ -150,6 +178,51 @@ public class MyTests {
         sessionActionProduct.exit();
     }
 
+    @Test
+    public void manyToOneRelationAccessCardAndRoom(){
+        SessionActionRoom sessionActionRoom = new SessionActionRoom();
+        SessionActionAccesCard sessionActionAccesCard = new SessionActionAccesCard();
 
+        Room room = new Room("warehouse");
+        AccessCard accessCard1 = new AccessCard(true, room, null);
+        AccessCard accessCard2 = new AccessCard(true, room, null);
+
+
+        sessionActionRoom.setup();
+        sessionActionAccesCard.setup();
+
+        sessionActionRoom.create(room);
+        sessionActionAccesCard.create(accessCard1);
+        sessionActionAccesCard.create(accessCard2);
+
+        sessionActionRoom.exit();
+        sessionActionAccesCard.exit();
+    }
+
+    @Test
+    public void manyToOneRelationAccessCardAndWorker(){
+        SessionActionWorker sessionActionWorker = new SessionActionWorker();
+        SessionActionAccesCard sessionActionAccesCard = new SessionActionAccesCard();
+
+        Worker worker = new Worker("Wojtek", "Nowak", 1234.67f, null);
+        AccessCard accessCard1 = new AccessCard(true, null, worker);
+        AccessCard accessCard2 = new AccessCard(true, null, worker);
+
+
+        sessionActionWorker.setup();
+        sessionActionAccesCard.setup();
+
+        sessionActionWorker.create(worker);
+        sessionActionAccesCard.create(accessCard1);
+        sessionActionAccesCard.create(accessCard2);
+
+        sessionActionWorker.exit();
+        sessionActionAccesCard.exit();
+    }
+
+    @Test
+    public void initializeTest(){
+        Main main = new Main();
+    }
 
 }
