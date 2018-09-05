@@ -23,7 +23,7 @@ public class Product {
     @ManyToOne
     private Supplier supplier;
 
-    public Product(){
+    public Product() {
 
     }
 

@@ -9,23 +9,21 @@ class SessionAction {
 
     protected SessionFactory sessionFactory;
 
-    public void setup(){
+    public void setup() {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure()
                 .build();
         try {
-            sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
-        }
-        catch (Exception e) {
+            sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+        } catch (Exception e) {
             e.printStackTrace();
-            StandardServiceRegistryBuilder.destroy( registry );
+            StandardServiceRegistryBuilder.destroy(registry);
         }
     }
 
-    public void exit(){
+    public void exit() {
         sessionFactory.close();
     }
-
 
 
 }

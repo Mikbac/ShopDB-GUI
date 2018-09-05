@@ -2,9 +2,9 @@ package sessionAction;
 
 import models.AccessCard;
 
-public class SessionActionAccesCard extends SessionAction{
+public class SessionActionAccesCard extends SessionAction {
 
-    public void create(AccessCard accessCard){
+    public void create(AccessCard accessCard) {
 
         org.hibernate.Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -17,19 +17,17 @@ public class SessionActionAccesCard extends SessionAction{
     }
 
 
-    public void read(int accessCardId)
-    {
+    public void read(int accessCardId) {
         org.hibernate.Session session = sessionFactory.openSession();
 
-        AccessCard accessCard= session.get(AccessCard.class,accessCardId);
+        AccessCard accessCard = session.get(AccessCard.class, accessCardId);
 
-        if(accessCard != null){
+        if (accessCard != null) {
             System.out.println("Id: " + accessCard.getAccessCardId());
             System.out.println("Active: " + accessCard.getActive());
             System.out.println("Room: " + accessCard.getRoom());
             System.out.println("Worker: " + accessCard.getWorker());
-        }
-        else{
+        } else {
             System.out.println("AccessCard could not be found!");
         }
 
@@ -37,23 +35,22 @@ public class SessionActionAccesCard extends SessionAction{
         session.close();
     }
 
-    public AccessCard getAccessCard(int accessCardId){
+    public AccessCard getAccessCard(int accessCardId) {
         org.hibernate.Session session = sessionFactory.openSession();
 
-        AccessCard accessCard= session.get(AccessCard.class,accessCardId);
+        AccessCard accessCard = session.get(AccessCard.class, accessCardId);
 
         session.close();
 
-        if(accessCard != null){
+        if (accessCard != null) {
             return accessCard;
-        }
-        else{
+        } else {
             return null;
         }
 
     }
 
-    public void delete( int id){
+    public void delete(int id) {
         AccessCard accessCard = new AccessCard();
         accessCard.setAccessCardId(id);
 

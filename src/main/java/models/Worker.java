@@ -21,7 +21,8 @@ public class Worker {
     @ManyToOne
     private Department department;
 
-   public Worker(){}
+    public Worker() {
+    }
 
     public Worker(String name, String surname, float salary, Department department) {
         this.name = name;

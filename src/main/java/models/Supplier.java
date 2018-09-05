@@ -18,7 +18,8 @@ public class Supplier {
     private String phone;
     private String nip;
 
-    public Supplier(){}
+    public Supplier() {
+    }
 
     public Supplier(String name, String address, String phone, String nip) {
         this.name = name;

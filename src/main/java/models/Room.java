@@ -15,7 +15,8 @@ public class Room {
     private int roomId;
     private String name;
 
-    public Room(){}
+    public Room() {
+    }
 
     public Room(String name) {
         this.name = name;

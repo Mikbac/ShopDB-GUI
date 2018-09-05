@@ -4,7 +4,6 @@ package models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "access_card_table")
@@ -23,7 +22,8 @@ public class AccessCard {
     @ManyToOne
     private Worker worker;
 
-    public AccessCard(){}
+    public AccessCard() {
+    }
 
     public AccessCard(Boolean active, Room room, Worker worker) {
         this.active = active;

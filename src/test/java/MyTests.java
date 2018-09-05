@@ -5,9 +5,8 @@ import sessionAction.*;
 public class MyTests {
 
 
-
     @Test
-    public void sessionTest(){
+    public void sessionTest() {
         SessionActionWorker sessionActionWorker = new SessionActionWorker();
         sessionActionWorker.setup();
         sessionActionWorker.exit();
@@ -35,7 +34,7 @@ public class MyTests {
 
 
     @Test
-    public void workerTest(){
+    public void workerTest() {
         SessionActionWorker sessionActionWorker = new SessionActionWorker();
         sessionActionWorker.setup();
 
@@ -50,7 +49,7 @@ public class MyTests {
 
 
     @Test
-    public void departmentTest(){
+    public void departmentTest() {
         SessionActionDepartment session = new SessionActionDepartment();
         session.setup();
 
@@ -64,7 +63,7 @@ public class MyTests {
     }
 
     @Test
-    public void productTest(){
+    public void productTest() {
         SessionActionProduct sessionActionProduct = new SessionActionProduct();
         sessionActionProduct.setup();
 
@@ -78,7 +77,7 @@ public class MyTests {
     }
 
     @Test
-    public void supplierTest(){
+    public void supplierTest() {
         SessionActionSupplier sessionActionSupplier = new SessionActionSupplier();
         sessionActionSupplier.setup();
 
@@ -91,7 +90,7 @@ public class MyTests {
     }
 
     @Test
-    public void roomTest(){
+    public void roomTest() {
         SessionActionRoom sessionActionRoom = new SessionActionRoom();
         sessionActionRoom.setup();
 
@@ -104,7 +103,7 @@ public class MyTests {
     }
 
     @Test
-    public void accessCardTest(){
+    public void accessCardTest() {
         SessionActionAccesCard sessionActionAccesCard = new SessionActionAccesCard();
         sessionActionAccesCard.setup();
 
@@ -117,12 +116,12 @@ public class MyTests {
     }
 
     @Test
-    public void manyToOneRelationDepartmentAndWorkerTest(){
+    public void manyToOneRelationDepartmentAndWorkerTest() {
         SessionActionDepartment sessionActionDepartment = new SessionActionDepartment();
         SessionActionWorker sessionActionWorker = new SessionActionWorker();
 
         Department department = new Department("Vegetables");
-        Worker worker1 = new Worker("Michał","Kowalski",1934.23f,department);
+        Worker worker1 = new Worker("Michał", "Kowalski", 1934.23f, department);
         Worker worker2 = new Worker("Rafal", "Okon", 2999.76f, department);
 
         sessionActionDepartment.setup();
@@ -138,7 +137,7 @@ public class MyTests {
     }
 
     @Test
-    public void manyToOneRelationDepartmentAndProductTest(){
+    public void manyToOneRelationDepartmentAndProductTest() {
         SessionActionDepartment sessionActionDepartment = new SessionActionDepartment();
         SessionActionProduct sessionActionProduct = new SessionActionProduct();
 
@@ -159,7 +158,7 @@ public class MyTests {
     }
 
     @Test
-    public void manyToOneRelationProductAndSupplierTest(){
+    public void manyToOneRelationProductAndSupplierTest() {
         SessionActionSupplier sessionActionSupplier = new SessionActionSupplier();
         SessionActionProduct sessionActionProduct = new SessionActionProduct();
 
@@ -179,7 +178,7 @@ public class MyTests {
     }
 
     @Test
-    public void manyToOneRelationAccessCardAndRoom(){
+    public void manyToOneRelationAccessCardAndRoom() {
         SessionActionRoom sessionActionRoom = new SessionActionRoom();
         SessionActionAccesCard sessionActionAccesCard = new SessionActionAccesCard();
 
@@ -200,7 +199,7 @@ public class MyTests {
     }
 
     @Test
-    public void manyToOneRelationAccessCardAndWorker(){
+    public void manyToOneRelationAccessCardAndWorker() {
         SessionActionWorker sessionActionWorker = new SessionActionWorker();
         SessionActionAccesCard sessionActionAccesCard = new SessionActionAccesCard();
 
@@ -221,7 +220,7 @@ public class MyTests {
     }
 
     @Test
-    public void initializeTest(){
+    public void initializeTest() {
         Main main = new Main();
     }
 

@@ -4,7 +4,7 @@ import models.Department;
 
 public class SessionActionDepartment extends SessionAction {
 
-    public void create(Department department){
+    public void create(Department department) {
 
 
         org.hibernate.Session session = sessionFactory.openSession();
@@ -18,17 +18,15 @@ public class SessionActionDepartment extends SessionAction {
     }
 
 
-    public void read(int departmentId)
-    {
+    public void read(int departmentId) {
         org.hibernate.Session session = sessionFactory.openSession();
 
-        Department department= session.get(Department.class,departmentId);
+        Department department = session.get(Department.class, departmentId);
 
-        if(department != null){
+        if (department != null) {
             System.out.println("Name: " + department.getDepartmentId());
             System.out.println("Name: " + department.getName());
-        }
-        else{
+        } else {
             System.out.println("Department could not be found!");
         }
 
@@ -36,23 +34,22 @@ public class SessionActionDepartment extends SessionAction {
         session.close();
     }
 
-    public Department getDepartment(int departmentId){
+    public Department getDepartment(int departmentId) {
         org.hibernate.Session session = sessionFactory.openSession();
 
-        Department department= session.get(Department.class,departmentId);
+        Department department = session.get(Department.class, departmentId);
 
         session.close();
 
-        if(department != null){
+        if (department != null) {
             return department;
-        }
-        else{
+        } else {
             return null;
         }
 
     }
 
-    public void delete( int id){
+    public void delete(int id) {
         Department department = new Department();
         department.setDepartmentId(id);
 

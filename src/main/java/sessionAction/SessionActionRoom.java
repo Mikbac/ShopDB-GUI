@@ -4,7 +4,7 @@ import models.Room;
 
 public class SessionActionRoom extends SessionAction {
 
-    public void create(Room room){
+    public void create(Room room) {
 
 
         org.hibernate.Session session = sessionFactory.openSession();
@@ -18,17 +18,15 @@ public class SessionActionRoom extends SessionAction {
     }
 
 
-    public void read(int roomId)
-    {
+    public void read(int roomId) {
         org.hibernate.Session session = sessionFactory.openSession();
 
-        Room room = session.get(Room.class,roomId);
+        Room room = session.get(Room.class, roomId);
 
-        if(room != null){
+        if (room != null) {
             System.out.println("Id: " + room.getRoomId());
             System.out.println("Name: " + room.getName());
-        }
-        else{
+        } else {
             System.out.println("Room could not be found!");
         }
 
@@ -36,23 +34,22 @@ public class SessionActionRoom extends SessionAction {
         session.close();
     }
 
-    public Room getRoom(int roomId){
+    public Room getRoom(int roomId) {
         org.hibernate.Session session = sessionFactory.openSession();
 
-        Room room= session.get(Room.class,roomId);
+        Room room = session.get(Room.class, roomId);
 
         session.close();
 
-        if(room != null){
+        if (room != null) {
             return room;
-        }
-        else{
+        } else {
             return null;
         }
 
     }
 
-    public void delete( int id){
+    public void delete(int id) {
         Room room = new Room();
         room.setRoomId(id);
 

@@ -4,7 +4,7 @@ import models.Worker;
 
 public class SessionActionWorker extends SessionAction {
 
-    public void create(Worker worker){
+    public void create(Worker worker) {
 
         org.hibernate.Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -17,19 +17,17 @@ public class SessionActionWorker extends SessionAction {
     }
 
 
-    public void read(int workerId)
-    {
+    public void read(int workerId) {
         org.hibernate.Session session = sessionFactory.openSession();
 
-        Worker worker = session.get(Worker.class,workerId);
+        Worker worker = session.get(Worker.class, workerId);
 
-        if(worker != null){
+        if (worker != null) {
             System.out.println("Id: " + worker.getWorkerId());
             System.out.println("Name: " + worker.getName());
             System.out.println("Surname: " + worker.getSurname());
             System.out.println("Salary: " + worker.getSalary());
-        }
-        else{
+        } else {
             System.out.println("Worker could not be found!");
         }
 
@@ -37,23 +35,22 @@ public class SessionActionWorker extends SessionAction {
         session.close();
     }
 
-    public Worker getWorker(int workerId){
+    public Worker getWorker(int workerId) {
         org.hibernate.Session session = sessionFactory.openSession();
 
-        Worker worker = session.get(Worker.class,workerId);
+        Worker worker = session.get(Worker.class, workerId);
 
         session.close();
 
-        if(worker != null){
+        if (worker != null) {
             return worker;
-        }
-        else{
+        } else {
             return null;
         }
 
     }
 
-    public void delete(int id){
+    public void delete(int id) {
         Worker worker = new Worker();
         worker.setWorkerId(id);
 

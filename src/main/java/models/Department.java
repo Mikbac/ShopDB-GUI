@@ -3,7 +3,6 @@ package models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "department_table")
@@ -16,7 +15,8 @@ public class Department {
     private int departmentId;
     private String name;
 
-    public Department(){}
+    public Department() {
+    }
 
     public Department(String name) {
         this.name = name;
