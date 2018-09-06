@@ -1,8 +1,10 @@
 [![Build Status](https://travis-ci.org/Mikbac/ShopDB-GUI.svg?branch=master)](https://travis-ci.org/Mikbac/ShopDB-GUI)
 
-# Shop Database
-Use:
+# Shop Database (+ graphical user interface)
+## Built With
 
--MySQL
+* [Maven](https://maven.apache.org/) - Dependency Management
 
--Hibernate
+* [Hibernate](http://hibernate.org/) - ORM framework
+
+* [MySQL](https://www.mysql.com/) -  Database management system
