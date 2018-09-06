@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 
 
 public class Main {
+    private static AddRecord addRecord;
     private JFrame frame;
+   // private AddRecord addRecord;
 
     private JTextField textAccessCardActive;
     private JTextField textAccessCardRoom;
@@ -34,6 +36,7 @@ public class Main {
 
     public Main() {
         initialize();
+        addRecord = new AddRecord();
     }
 
     public static void main(String[] args) {
@@ -49,6 +52,7 @@ public class Main {
             }
         });
 
+        addRecord.exit();
     }
 
     private void initialize() {
@@ -192,7 +196,6 @@ public class Main {
     }
 
     private void buttonWorks(JButton button, final String name, final JTextField[] textFields) {
-        final AddRecord addRecord = new AddRecord();
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
