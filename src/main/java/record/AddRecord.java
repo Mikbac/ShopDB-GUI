@@ -1,40 +1,16 @@
+package record;
+
 import models.*;
 import sessionAction.*;
 
 import javax.swing.*;
 
-public class AddRecord {
+public class AddRecord extends Record{
 
-    private SessionActionAccesCard sessionActionAccesCard;
-    private SessionActionDepartment sessionActionDepartment;
-    private SessionActionProduct sessionActionProduct;
-    private SessionActionRoom sessionActionRoom;
-    private SessionActionSupplier sessionActionSupplier;
-    private SessionActionWorker sessionActionWorker;
+
 
     public AddRecord() {
-        sessionActionAccesCard = new SessionActionAccesCard();
-        sessionActionDepartment = new SessionActionDepartment();
-        sessionActionProduct = new SessionActionProduct();
-        sessionActionRoom = new SessionActionRoom();
-        sessionActionSupplier = new SessionActionSupplier();
-        sessionActionWorker = new SessionActionWorker();
-
-        sessionActionAccesCard.setup();
-        sessionActionDepartment.setup();
-        sessionActionProduct.setup();
-        sessionActionRoom.setup();
-        sessionActionSupplier.setup();
-        sessionActionWorker.setup();
-    }
-
-    public void exit() {
-        sessionActionAccesCard.exit();
-        sessionActionDepartment.exit();
-        sessionActionProduct.exit();
-        sessionActionRoom.exit();
-        sessionActionSupplier.exit();
-        sessionActionWorker.exit();
+setup();
     }
 
     public void select(String name, JTextField[] textFields) {
