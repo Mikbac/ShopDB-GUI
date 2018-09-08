@@ -5,8 +5,6 @@ import models.Department;
 public class SessionActionDepartment extends SessionAction {
 
     public void create(Department department) {
-
-
         org.hibernate.Session session = sessionFactory.openSession();
         session.beginTransaction();
 
@@ -14,7 +12,6 @@ public class SessionActionDepartment extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 
@@ -29,7 +26,6 @@ public class SessionActionDepartment extends SessionAction {
         } else {
             System.out.println("Department could not be found!");
         }
-
 
         session.close();
     }
@@ -46,7 +42,6 @@ public class SessionActionDepartment extends SessionAction {
         } else {
             return null;
         }
-
     }
 
     public void delete(int id) {
@@ -60,7 +55,6 @@ public class SessionActionDepartment extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 }

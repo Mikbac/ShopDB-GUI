@@ -1,9 +1,11 @@
 import models.*;
-import org.junit.Test;
+import record.*;
 import sessionAction.*;
 
-public class MyTests {
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
+public class MyTests {
 
     @Test
     public void sessionTest() {
@@ -32,7 +34,6 @@ public class MyTests {
         sessionActionRoom.exit();
     }
 
-
     @Test
     public void workerTest() {
         SessionActionWorker sessionActionWorker = new SessionActionWorker();
@@ -46,7 +47,6 @@ public class MyTests {
         sessionActionWorker.delete(worker.getWorkerId());
         sessionActionWorker.exit();
     }
-
 
     @Test
     public void departmentTest() {
@@ -133,7 +133,6 @@ public class MyTests {
 
         sessionActionWorker.exit();
         sessionActionDepartment.exit();
-
     }
 
     @Test
@@ -154,7 +153,6 @@ public class MyTests {
 
         sessionActionDepartment.exit();
         sessionActionProduct.exit();
-
     }
 
     @Test
@@ -206,7 +204,6 @@ public class MyTests {
         Worker worker = new Worker("Wojtek", "Nowak", 1234.67f, null);
         AccessCard accessCard1 = new AccessCard(true, null, worker);
         AccessCard accessCard2 = new AccessCard(true, null, worker);
-
 
         sessionActionWorker.setup();
         sessionActionAccesCard.setup();

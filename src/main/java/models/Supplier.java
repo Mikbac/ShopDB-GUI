@@ -67,4 +67,5 @@ public class Supplier {
     public void setNip(String nip) {
         this.nip = nip;
     }
+
 }

@@ -3,13 +3,13 @@ package record;
 import sessionAction.*;
 
 public class Record {
-    protected  SessionActionAccesCard sessionActionAccesCard;
-    protected  SessionActionDepartment sessionActionDepartment;
-    protected  SessionActionProduct sessionActionProduct;
-    protected  SessionActionRoom sessionActionRoom;
-    protected  SessionActionSupplier sessionActionSupplier;
-    protected  SessionActionWorker sessionActionWorker;
 
+    protected SessionActionAccesCard sessionActionAccesCard;
+    protected SessionActionDepartment sessionActionDepartment;
+    protected SessionActionProduct sessionActionProduct;
+    protected SessionActionRoom sessionActionRoom;
+    protected SessionActionSupplier sessionActionSupplier;
+    protected SessionActionWorker sessionActionWorker;
 
 
     public Record() {
@@ -19,18 +19,16 @@ public class Record {
         sessionActionRoom = new SessionActionRoom();
         sessionActionSupplier = new SessionActionSupplier();
         sessionActionWorker = new SessionActionWorker();
-
     }
 
-public void setup(){
-
-    sessionActionAccesCard.setup();
-    sessionActionDepartment.setup();
-    sessionActionProduct.setup();
-    sessionActionRoom.setup();
-    sessionActionSupplier.setup();
-    sessionActionWorker.setup();
-}
+    public void setup() {
+        sessionActionAccesCard.setup();
+        sessionActionDepartment.setup();
+        sessionActionProduct.setup();
+        sessionActionRoom.setup();
+        sessionActionSupplier.setup();
+        sessionActionWorker.setup();
+    }
 
     public void exit() {
         sessionActionAccesCard.exit();

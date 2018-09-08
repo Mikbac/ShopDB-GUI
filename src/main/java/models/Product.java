@@ -24,7 +24,6 @@ public class Product {
     private Supplier supplier;
 
     public Product() {
-
     }
 
     public Product(String name, int amount, float price, Department department, Supplier supplier) {
@@ -82,4 +81,5 @@ public class Product {
     public void setSupplier(Supplier supplier) {
         this.supplier = supplier;
     }
+
 }

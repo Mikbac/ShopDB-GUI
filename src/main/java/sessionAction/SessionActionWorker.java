@@ -5,7 +5,6 @@ import models.Worker;
 public class SessionActionWorker extends SessionAction {
 
     public void create(Worker worker) {
-
         org.hibernate.Session session = sessionFactory.openSession();
         session.beginTransaction();
 
@@ -13,7 +12,6 @@ public class SessionActionWorker extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 
@@ -31,7 +29,6 @@ public class SessionActionWorker extends SessionAction {
             System.out.println("Worker could not be found!");
         }
 
-
         session.close();
     }
 
@@ -47,7 +44,6 @@ public class SessionActionWorker extends SessionAction {
         } else {
             return null;
         }
-
     }
 
     public void delete(int id) {
@@ -61,7 +57,6 @@ public class SessionActionWorker extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 }

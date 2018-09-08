@@ -13,7 +13,6 @@ public class SessionActionAccesCard extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 
@@ -31,7 +30,6 @@ public class SessionActionAccesCard extends SessionAction {
             System.out.println("AccessCard could not be found!");
         }
 
-
         session.close();
     }
 
@@ -47,7 +45,6 @@ public class SessionActionAccesCard extends SessionAction {
         } else {
             return null;
         }
-
     }
 
     public void delete(int id) {
@@ -61,7 +58,6 @@ public class SessionActionAccesCard extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 }

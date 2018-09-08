@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class Main{
+public class Main {
     private static AddRecord addRecord;
     private static GetRecord getRecord;
     private static Record record;
@@ -16,37 +16,13 @@ public class Main{
 
     private JLabel labelAnser;
 
-    private JTextField textAccessCardActive;
-    private JTextField textAccessCardRoom;
-    private JTextField textAccessCardWorker;
-
+    private JTextField textAccessCardActive, textAccessCardRoom, textAccessCardWorker;
     private JTextField textDepartmentName;
-
-    private JTextField textProductName;
-    private JTextField textProductAmount;
-    private JTextField textProductPrice;
-    private JTextField textProductDepartment;
-    private JTextField textProductSupplier;
-
+    private JTextField textProductName, textProductAmount, textProductPrice, textProductDepartment, textProductSupplier;
     private JTextField textRoomName;
-
-    private JTextField textSupplierName;
-    private JTextField textSupplierAddress;
-    private JTextField textSupplierPhone;
-    private JTextField textSupplierNip;
-
-    private JTextField textWorkerName;
-    private JTextField textWorkerSurname;
-    private JTextField textWorkerSalary;
-    private JTextField textWorkerDepartment;
-
-    private JTextField textIdAccessCard;
-    private JTextField textIdDepartment;
-    private JTextField textIdProduct;
-    private JTextField textIdRoom;
-    private JTextField textIdSupplier;
-    private JTextField textIdWorker;
-
+    private JTextField textSupplierName, textSupplierAddress, textSupplierPhone, textSupplierNip;
+    private JTextField textWorkerName, textWorkerSurname, textWorkerSalary, textWorkerDepartment;
+    private JTextField textIdAccessCard, textIdDepartment, textIdProduct, textIdRoom, textIdSupplier, textIdWorker;
 
     public Main() {
         record = new Record();
@@ -69,7 +45,7 @@ public class Main{
             }
         });
 
-      record.exit();
+        record.exit();
     }
 
     private void initialize() {
@@ -84,180 +60,187 @@ public class Main{
         room();
         supplier();
         worker();
-
     }
 
     private void accessCard() {
+        String name = "AccessCard";
         int xAccessCard = 0;
         String[] tableAccessCard = {"Active", "Room", "Worker"};
         JTextField[] textFieldAccessCard = {textAccessCardActive, textAccessCardRoom, textAccessCardWorker};
         JTextField jTextField[] = {textIdAccessCard};
 
-        headlines(xAccessCard, "Acces Card");
-
-        columnSignatures(xAccessCard, tableAccessCard);
+        labelHeadlines(xAccessCard, "Acces Card");
+        labelColumnSignatures(xAccessCard, tableAccessCard);
 
         textFields(xAccessCard, textFieldAccessCard);
 
-         JButton  buttonAccesCardAdd = new JButton("ADD ACCESS CARD");
-        buttonAdd(buttonAccesCardAdd, "AccessCard", textFieldAccessCard);
+        JButton buttonAccesCardAdd = new JButton("ADD ACCESS CARD");
+        buttonAdd(buttonAccesCardAdd, name, textFieldAccessCard);
         buttonOptionsAdd(xAccessCard, buttonAccesCardAdd);
 
-        idLabel(xAccessCard);
-        textId(xAccessCard, jTextField);
-         JButton  buttonAccesCardGet = new JButton("GET ACCESS CARD");
-        buttonGet(buttonAccesCardGet, "AccessCard", jTextField);
-        buttonOptionsGet(xAccessCard, buttonAccesCardGet);
+        labelId(xAccessCard);
 
+        textId(xAccessCard, jTextField);
+
+        JButton buttonAccesCardGet = new JButton("GET ACCESS CARD");
+        buttonGet(buttonAccesCardGet, name, jTextField);
+        buttonOptionsGet(xAccessCard, buttonAccesCardGet);
     }
 
     private void department() {
+        String name = "Department";
         int xDepartment = 200;
         String[] tableDepartment = {"Name"};
         JTextField[] textFieldDepartment = {textDepartmentName};
         JTextField[] jTextField = {textIdDepartment};
 
-        headlines(xDepartment, "Department");
+        labelHeadlines(xDepartment, name);
 
-        columnSignatures(xDepartment, tableDepartment);
+        labelColumnSignatures(xDepartment, tableDepartment);
 
         textFields(xDepartment, textFieldDepartment);
 
         JButton buttonDepartmentAdd = new JButton("ADD DEPARTMENT");
-        buttonAdd(buttonDepartmentAdd, "Department", textFieldDepartment);
+        buttonAdd(buttonDepartmentAdd, name, textFieldDepartment);
         buttonOptionsAdd(xDepartment, buttonDepartmentAdd);
 
-        idLabel(xDepartment);
-        textId(xDepartment, jTextField);
-        JButton  buttonDepartmentGet = new JButton("GET DEPARTMENT");
-        buttonGet(buttonDepartmentGet, "Department", jTextField);
-        buttonOptionsGet(xDepartment, buttonDepartmentGet);
+        labelId(xDepartment);
 
+        textId(xDepartment, jTextField);
+
+        JButton buttonDepartmentGet = new JButton("GET DEPARTMENT");
+        buttonGet(buttonDepartmentGet, name, jTextField);
+        buttonOptionsGet(xDepartment, buttonDepartmentGet);
     }
 
     private void product() {
+        String name = "Product";
         int xProduct = 400;
         String[] tableProduct = new String[]{"Name", "Amount", "Price", "Department", "Supplier"};
         JTextField[] textFieldProduct = {textProductName, textProductAmount, textProductPrice, textProductDepartment, textProductSupplier};
         JTextField[] jTextField = {textIdProduct};
 
-        headlines(xProduct, "Product");
+        labelHeadlines(xProduct, name);
 
-        columnSignatures(xProduct, tableProduct);
+        labelColumnSignatures(xProduct, tableProduct);
 
         textFields(xProduct, textFieldProduct);
 
         JButton buttonProductAdd = new JButton("ADD PRODUCT");
-        buttonAdd(buttonProductAdd, "Product", textFieldProduct);
+        buttonAdd(buttonProductAdd, name, textFieldProduct);
         buttonOptionsAdd(xProduct, buttonProductAdd);
 
-        idLabel(xProduct);
+        labelId(xProduct);
+
         textId(xProduct, jTextField);
+
         JButton buttonProductGet = new JButton("GET PRODUCT");
-        buttonGet(buttonProductGet, "Product", jTextField);
+        buttonGet(buttonProductGet, name, jTextField);
         buttonOptionsGet(xProduct, buttonProductGet);
     }
 
     private void room() {
+        String name = "Room";
         int xRoom = 600;
         String[] tableRoom = new String[]{"Name"};
         JTextField[] jTextFieldRoom = {textRoomName};
         JTextField jTextField[] = {textIdRoom};
 
-        headlines(xRoom, "Room");
+        labelHeadlines(xRoom, name);
 
-        columnSignatures(xRoom, tableRoom);
+        labelColumnSignatures(xRoom, tableRoom);
 
         textFields(xRoom, jTextFieldRoom);
 
         JButton buttonRoomAdd = new JButton("ADD ROOM");
-        buttonAdd(buttonRoomAdd, "Room", jTextFieldRoom);
+        buttonAdd(buttonRoomAdd, name, jTextFieldRoom);
         buttonOptionsAdd(xRoom, buttonRoomAdd);
 
-        idLabel(xRoom);
+        labelId(xRoom);
 
         textId(xRoom, jTextField);
 
         JButton buttonRoomGet = new JButton("GET ROOM");
-        buttonGet(buttonRoomGet, "Room", jTextField);
+        buttonGet(buttonRoomGet, name, jTextField);
         buttonOptionsGet(xRoom, buttonRoomGet);
     }
 
-
     private void supplier() {
+        String name = "Supplier";
         int xSupplier = 800;
         String[] tableSupplier = new String[]{"Name", "Address", "Phone", "Nip"};
         JTextField[] jTextFieldSupplier = {textSupplierName, textSupplierAddress, textSupplierPhone, textSupplierNip};
         JTextField jTextField[] = {textIdSupplier};
 
-        headlines(xSupplier, "Supplier");
+        labelHeadlines(xSupplier, name);
 
-        columnSignatures(xSupplier, tableSupplier);
+        labelColumnSignatures(xSupplier, tableSupplier);
 
         textFields(xSupplier, jTextFieldSupplier);
 
         JButton buttonSupplierAdd = new JButton("ADD SUPPLIER");
-        buttonAdd(buttonSupplierAdd, "Supplier", jTextFieldSupplier);
+        buttonAdd(buttonSupplierAdd, name, jTextFieldSupplier);
         buttonOptionsAdd(xSupplier, buttonSupplierAdd);
 
-        idLabel(xSupplier);
+        labelId(xSupplier);
+
         textId(xSupplier, jTextField);
+
         JButton buttonSupplierGet = new JButton("GET SUPPLIER");
-        buttonGet(buttonSupplierGet, "Supplier", jTextField);
+        buttonGet(buttonSupplierGet, name, jTextField);
         buttonOptionsGet(xSupplier, buttonSupplierGet);
     }
 
-
     private void worker() {
+        String name = "Worker";
         int xWorker = 1000;
         String[] tableWorker = new String[]{"Name", "Surname", "Salary", "Department"};
         JTextField[] jTextFieldWorker = {textWorkerName, textWorkerSurname, textWorkerSalary, textWorkerDepartment};
         JTextField jTextField[] = {textIdWorker};
 
-        headlines(xWorker, "Worker");
+        labelHeadlines(xWorker, name);
 
-        columnSignatures(xWorker, tableWorker);
+        labelColumnSignatures(xWorker, tableWorker);
 
         textFields(xWorker, jTextFieldWorker);
 
         JButton buttonWorkerAdd = new JButton("ADD WORKER");
-        buttonAdd(buttonWorkerAdd, "Worker", jTextFieldWorker);
+        buttonAdd(buttonWorkerAdd, name, jTextFieldWorker);
         buttonOptionsAdd(xWorker, buttonWorkerAdd);
 
-        idLabel(xWorker);
+        labelId(xWorker);
+
         textId(xWorker, jTextField);
+
         JButton buttonWorkerGet = new JButton("GET WORKER");
-        buttonGet(buttonWorkerGet, "Worker", jTextField);
+        buttonGet(buttonWorkerGet, name, jTextField);
         buttonOptionsGet(xWorker, buttonWorkerGet);
     }
 
-    private void headlines(int x, String name) {
+    private void labelHeadlines(int x, String name) {
         JLabel label = new JLabel(name + ":");
         label.setFont(new Font("Times New Roman", Font.BOLD, 18));
         label.setBounds(25 + x, 25, 100, 45);
         frame.getContentPane().add(label);
     }
 
-    private void columnSignatures(int x, String[] table) {
-
+    private void labelColumnSignatures(int x, String[] table) {
         for (int i = 0; i < table.length; i++) {
             JLabel label = new JLabel(table[i] + ":");
             label.setFont(new Font("Times New Roman", Font.BOLD, 14));
             label.setBounds(25 + x, 25 + (i + 1) * 50, 100, 45);
             frame.getContentPane().add(label);
         }
-
     }
 
-    private void idLabel(int x) {
+    private void labelId(int x) {
         JLabel label = new JLabel("id: ");
         label.setFont(new Font("Times New Roman", Font.BOLD, 14));
         label.setBounds(25 + x, 420, 100, 45);
         frame.getContentPane().add(label);
-
     }
 
-    private void answerLabel(String answer) {
+    private void labelAnswer(String answer) {
         labelAnser.setText(answer);
         labelAnser.setFont(new Font("Times New Roman", Font.BOLD, 14));
         labelAnser.setBounds(25, 500, 1100, 45);
@@ -283,15 +266,12 @@ public class Main{
     private void buttonAdd(JButton button, final String name, final JTextField[] textFields) {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
                 try {
                     addRecord.select(name, textFields);
                 } catch (Exception e1) {
                     JOptionPane.showMessageDialog(null, "wrong values!");
                 } finally {
                 }
-
-
             }
         });
     }
@@ -299,21 +279,17 @@ public class Main{
     private void buttonGet(JButton button, final String name, final JTextField[] textField) {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
                 try {
                     String answerString;
                     answerString = getRecord.select(name, textField);
-                    answerLabel(answerString);
+                    labelAnswer(answerString);
                 } catch (Exception e2) {
                     JOptionPane.showMessageDialog(null, "wrong values!");
                 } finally {
                 }
-
-
             }
         });
     }
-
 
     private void buttonOptionsAdd(int x, JButton button) {
         button.setFont(new Font("Times New Roman", Font.BOLD, 10));
@@ -321,14 +297,10 @@ public class Main{
         frame.getContentPane().add(button);
     }
 
-
-
-
     private void buttonOptionsGet(int x, JButton button) {
         button.setFont(new Font("Times New Roman", Font.BOLD, 10));
         button.setBounds(10 + x, 480, 140, 20);
         frame.getContentPane().add(button);
     }
-
 
 }

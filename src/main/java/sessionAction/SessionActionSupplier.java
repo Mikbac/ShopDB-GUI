@@ -6,7 +6,6 @@ import models.Supplier;
 public class SessionActionSupplier extends SessionAction {
 
     public void create(Supplier supplier) {
-
         org.hibernate.Session session = sessionFactory.openSession();
         session.beginTransaction();
 
@@ -14,7 +13,6 @@ public class SessionActionSupplier extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 
@@ -29,11 +27,9 @@ public class SessionActionSupplier extends SessionAction {
             System.out.println("Address: " + supplier.getAddress());
             System.out.println("Phone: " + supplier.getPhone());
             System.out.println("Nip: " + supplier.getNip());
-
         } else {
             System.out.println("Supplier could not be found!");
         }
-
 
         session.close();
     }
@@ -50,7 +46,6 @@ public class SessionActionSupplier extends SessionAction {
         } else {
             return null;
         }
-
     }
 
     public void delete(int id) {
@@ -64,7 +59,6 @@ public class SessionActionSupplier extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 }

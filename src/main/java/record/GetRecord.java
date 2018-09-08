@@ -1,20 +1,18 @@
 package record;
 
 import models.*;
-import sessionAction.*;
 
 import javax.swing.*;
 
-public class GetRecord extends Record{
-
-
+public class GetRecord extends Record {
 
     public GetRecord() {
-setup();
+        setup();
     }
 
     public String select(String name, JTextField[] textField) {
         int id = Integer.parseInt(textField[0].getText());
+
         if (name.equals("AccessCard")) {
             return getAccessCardRecord(id);
         } else if (name.equals("Department")) {
@@ -44,7 +42,7 @@ setup();
         String room = getRoomRecord(accessCard.getRoom().getRoomId());
         String worker = getWorkerRecord(accessCard.getWorker().getWorkerId());
 
-        answer = "id: " + idString + " active: " + active + " room: (" + room + ") worker: (" + worker+")";
+        answer = "id: " + idString + " active: " + active + " room: (" + room + ") worker: (" + worker + ")";
         return answer;
     }
 

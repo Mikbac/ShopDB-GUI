@@ -1,6 +1,5 @@
 package models;
 
-
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -70,4 +69,5 @@ public class Worker {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
 }

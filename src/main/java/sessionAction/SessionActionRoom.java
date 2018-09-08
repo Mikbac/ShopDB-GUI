@@ -5,8 +5,6 @@ import models.Room;
 public class SessionActionRoom extends SessionAction {
 
     public void create(Room room) {
-
-
         org.hibernate.Session session = sessionFactory.openSession();
         session.beginTransaction();
 
@@ -14,7 +12,6 @@ public class SessionActionRoom extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 
@@ -46,7 +43,6 @@ public class SessionActionRoom extends SessionAction {
         } else {
             return null;
         }
-
     }
 
     public void delete(int id) {
@@ -60,7 +56,6 @@ public class SessionActionRoom extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 }

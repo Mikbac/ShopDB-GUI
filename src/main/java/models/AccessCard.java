@@ -1,6 +1,5 @@
 package models;
 
-
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -62,4 +61,5 @@ public class AccessCard {
     public void setWorker(Worker worker) {
         this.worker = worker;
     }
+
 }

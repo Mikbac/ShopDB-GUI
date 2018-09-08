@@ -1,12 +1,10 @@
 package sessionAction;
 
-
 import models.Product;
 
 public class SessionActionProduct extends SessionAction {
 
     public void create(Product product) {
-
         org.hibernate.Session session = sessionFactory.openSession();
         session.beginTransaction();
 
@@ -14,7 +12,6 @@ public class SessionActionProduct extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 
@@ -50,7 +47,6 @@ public class SessionActionProduct extends SessionAction {
         } else {
             return null;
         }
-
     }
 
     public void delete(int id) {
@@ -64,7 +60,6 @@ public class SessionActionProduct extends SessionAction {
 
         session.getTransaction().commit();
         session.close();
-
     }
 
 }

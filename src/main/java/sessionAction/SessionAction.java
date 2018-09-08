@@ -25,5 +25,4 @@ class SessionAction {
         sessionFactory.close();
     }
 
-
 }
