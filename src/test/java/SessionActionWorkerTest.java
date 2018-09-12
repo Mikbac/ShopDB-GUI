@@ -1,6 +1,6 @@
 import models.Department;
 import models.Worker;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import sessionAction.SessionActionDepartment;
 import sessionAction.SessionActionWorker;
 

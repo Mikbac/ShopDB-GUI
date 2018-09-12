@@ -1,7 +1,7 @@
 import models.AccessCard;
 import models.Room;
 import models.Worker;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import sessionAction.SessionActionAccesCard;
 import sessionAction.SessionActionRoom;
 import sessionAction.SessionActionWorker;

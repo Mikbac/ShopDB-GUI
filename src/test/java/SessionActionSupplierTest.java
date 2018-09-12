@@ -1,5 +1,5 @@
 import models.Supplier;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import sessionAction.SessionActionSupplier;
 
 public class SessionActionSupplierTest {

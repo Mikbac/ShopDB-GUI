@@ -1,7 +1,7 @@
 import models.Department;
 import models.Product;
 import models.Supplier;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import sessionAction.SessionActionDepartment;
 import sessionAction.SessionActionProduct;
 import sessionAction.SessionActionSupplier;

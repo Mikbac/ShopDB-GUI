@@ -1,5 +1,5 @@
 import models.Department;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import sessionAction.SessionActionDepartment;
 
 public class SessionActionDepartmentTest {
