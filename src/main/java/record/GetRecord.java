@@ -65,12 +65,12 @@ public class GetRecord extends Record {
 
         String idString = String.valueOf(product.getProductId());
         String name = product.getName();
-        String amount = String.valueOf(product.getAmount());
+        String quantity = String.valueOf(product.getQuantity());
         String price = String.valueOf(product.getPrice());
         String department = getDepartmentRecord(product.getDepartment().getDepartmentId());
         String supplier = getSupplierRecord(product.getSupplier().getSupplierId());
 
-        answer = "id: " + idString + " name: " + name + " amount: " + amount + " price: " + price + " department: (" + department + ") Supplier: (" + supplier + ")";
+        answer = "id: " + idString + " name: " + name + " quantity: " + quantity + " price: " + price + " department: (" + department + ") Supplier: (" + supplier + ")";
         return answer;
     }
 

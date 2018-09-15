@@ -14,7 +14,7 @@ public class Product {
     @GenericGenerator(name = "incrementator", strategy = "increment")
     private int productId;
     private String name;
-    private int amount;
+    private int quantity;
     private float price;
 
     @ManyToOne
@@ -26,9 +26,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, int amount, float price, Department department, Supplier supplier) {
+    public Product(String name, int quantity, float price, Department department, Supplier supplier) {
         this.name = name;
-        this.amount = amount;
+        this.quantity = quantity;
         this.price = price;
         this.department = department;
         this.supplier = supplier;
@@ -50,12 +50,12 @@ public class Product {
         this.name = name;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public float getPrice() {

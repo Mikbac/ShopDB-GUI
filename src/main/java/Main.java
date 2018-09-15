@@ -18,7 +18,7 @@ public class Main {
 
     private JTextField textAccessCardActive, textAccessCardRoom, textAccessCardWorker;
     private JTextField textDepartmentName;
-    private JTextField textProductName, textProductAmount, textProductPrice, textProductDepartment, textProductSupplier;
+    private JTextField textProductName, textProductQuantity, textProductPrice, textProductDepartment, textProductSupplier;
     private JTextField textRoomName;
     private JTextField textSupplierName, textSupplierAddress, textSupplierPhone, textSupplierNip;
     private JTextField textWorkerName, textWorkerSurname, textWorkerSalary, textWorkerDepartment;
@@ -116,8 +116,8 @@ public class Main {
     private void product() {
         String name = "Product";
         int xProduct = 400;
-        String[] tableProduct = new String[]{"Name", "Amount", "Price", "Department", "Supplier"};
-        JTextField[] textFieldProduct = {textProductName, textProductAmount, textProductPrice, textProductDepartment, textProductSupplier};
+        String[] tableProduct = new String[]{"Name", "Quantity", "Price", "Department", "Supplier"};
+        JTextField[] textFieldProduct = {textProductName, textProductQuantity, textProductPrice, textProductDepartment, textProductSupplier};
         JTextField[] jTextField = {textIdProduct};
 
         labelHeadlines(xProduct, name);

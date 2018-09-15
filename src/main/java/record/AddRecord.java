@@ -50,12 +50,12 @@ public class AddRecord extends Record {
 
     private void addNewProduct(JTextField[] text) {
         String name = text[0].getText();
-        int amount = Integer.parseInt(text[1].getText());
+        int quantity = Integer.parseInt(text[1].getText());
         float price = Float.parseFloat(text[2].getText());
         Department department = sessionActionDepartment.getDepartment(Integer.parseInt(text[3].getText()));
         Supplier supplier = sessionActionSupplier.getSupplier(Integer.parseInt(text[4].getText()));
 
-        Product product = new Product(name, amount, price, department, supplier);
+        Product product = new Product(name, quantity, price, department, supplier);
 
         sessionActionProduct.create(product);
     }

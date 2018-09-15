@@ -23,7 +23,7 @@ public class SessionActionProduct extends SessionAction {
         if (product != null) {
             System.out.println("Id: " + product.getProductId());
             System.out.println("Name: " + product.getName());
-            System.out.println("Amount: " + product.getAmount());
+            System.out.println("Amount: " + product.getQuantity());
             System.out.println("Price: " + product.getPrice());
             System.out.println("Department: " + product.getDepartment());
             System.out.println("Supplier: " + product.getSupplier());
