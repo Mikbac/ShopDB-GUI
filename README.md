@@ -12,3 +12,8 @@
 * [Swing](https://docs.oracle.com/javase/8/docs/technotes/guides/swing/) -  GUI widget toolkit for Java
 
 * [JUnit 5](https://junit.org/junit5/) - Unit testing framework
+
+
+## GUI example
+
+![GUI](img/gui.png)
