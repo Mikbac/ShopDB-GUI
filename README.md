@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Mikbac/Shop-Database.svg?branch=master)](https://travis-ci.org/Mikbac/Shop-Database)
+![GitHub](https://img.shields.io/github/license/Mikbac/Shop-Database)
 
 # Shop Database (+ graphical user interface)
 ## Built With
